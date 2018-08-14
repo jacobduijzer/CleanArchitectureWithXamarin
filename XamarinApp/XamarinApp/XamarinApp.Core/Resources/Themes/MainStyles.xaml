@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamarinApp.Core.Resources.Themes.MainStyles" xmlns:local="clr-namespace:XamarinApp.Core.Resources.Themes">
+    <ResourceDictionary.MergedDictionaries>
+        <local:BaseTheme />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Color x:Key="AdditionalColor">#00FF00</Color>
+
+    <Style TargetType="NavigationPage">
+        <Setter Property="BarBackgroundColor" Value="White"/>
+        <Setter Property="BarTextColor" Value="Black"/>
+    </Style>
+    
+    <Style x:Key="ListItemTitle" TargetType="Label">
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="ListItemSubtitle" TargetType="Label">
+        <Setter Property="FontSize" Value="Small" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+</ResourceDictionary>

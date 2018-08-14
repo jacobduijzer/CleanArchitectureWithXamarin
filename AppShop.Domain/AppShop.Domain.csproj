@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Catalog\" />
+    <Folder Include="Catalog\Entities\" />
+    <Folder Include="Shared\" />
+    <Folder Include="Shared\Contracts\" />
+    <Folder Include="Shared\Entities\" />
+    <Folder Include="Basket\" />
+    <Folder Include="Basket\Entities\" />
+    <Folder Include="Basket\Services\" />
+    <Folder Include="Basket\Contracts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LinqBuilder" Version="0.12.1" />
+    <PackageReference Include="LinqBuilder.OrderBy" Version="0.12.1" />
+    <PackageReference Include="LinqBuilder.Core" Version="0.12.1" />
+  </ItemGroup>
+</Project>

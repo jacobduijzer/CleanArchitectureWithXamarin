@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
+    <PackageReference Include="FluentAssertions" Version="5.4.1" />
+    <PackageReference Include="Moq" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Application\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Domain\Catalog\" />
+    <Folder Include="Domain\Catalog\Entities\" />
+    <Folder Include="Application\Catalog\" />
+    <Folder Include="Application\Catalog\Specificationa\" />
+    <Folder Include="Application\Catalog\UseCases\" />
+    <Folder Include="Application\Catalog\UseCases\CatalogBrands\" />
+    <Folder Include="Application\Catalog\UseCases\CatalogItems\" />
+    <Folder Include="Application\Catalog\UseCases\CatalogTypes\" />
+    <Folder Include="Domain\Basket\" />
+    <Folder Include="Domain\Basket\Entities\" />
+    <Folder Include="Domain\Basket\Services\" />
+    <Folder Include="Application\Basket\" />
+    <Folder Include="Application\Basket\UseCases\" />
+    <Folder Include="Application\Basket\UseCases\AddItem\" />
+    <Folder Include="Application\Basket\UseCases\ItemCount\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppShop.Application\AppShop.Application.csproj" />
+    <ProjectReference Include="..\AppShop.Domain\AppShop.Domain.csproj" />
+    <ProjectReference Include="..\AppShop.Infrastructure\AppShop.Infrastructure.csproj" />
+    <ProjectReference Include="..\AppShop.MockData\AppShop.MockData.csproj" />
+  </ItemGroup>
+</Project>

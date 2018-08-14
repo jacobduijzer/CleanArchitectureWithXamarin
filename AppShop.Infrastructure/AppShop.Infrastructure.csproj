@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Catalog\" />
+    <Folder Include="Catalog\Repositories\" />
+    <Folder Include="Basket\" />
+    <Folder Include="Basket\Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppShop.Domain\AppShop.Domain.csproj" />
+    <ProjectReference Include="..\AppShop.MockData\AppShop.MockData.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LinqBuilder" Version="0.12.1" />
+    <PackageReference Include="LinqBuilder.OrderBy" Version="0.12.1" />
+    <PackageReference Include="LinqBuilder.Core" Version="0.12.1" />
+  </ItemGroup>
+</Project>

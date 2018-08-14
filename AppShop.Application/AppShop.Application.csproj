@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LinqBuilder.Core" Version="0.12.1" />
+    <PackageReference Include="LinqBuilder.OrderBy" Version="0.12.1" />
+    <PackageReference Include="LinqBuilder" Version="0.12.1" />
+    <PackageReference Include="MediatR" Version="5.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Catalog\UseCases\" />
+    <Folder Include="Catalog\" />
+    <Folder Include="Catalog\UseCases\CatalogBrands\" />
+    <Folder Include="Catalog\UseCases\CatalogItems\" />
+    <Folder Include="Catalog\UseCases\CatalogTypes\" />
+    <Folder Include="Catalog\Specifications\" />
+    <Folder Include="Basket\" />
+    <Folder Include="Basket\UseCases\" />
+    <Folder Include="Basket\UseCases\AddItem\" />
+    <Folder Include="Basket\UseCases\ItemCount\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppShop.Domain\AppShop.Domain.csproj" />
+  </ItemGroup>
+</Project>

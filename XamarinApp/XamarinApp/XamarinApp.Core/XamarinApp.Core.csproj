@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MvvmCross" Version="6.2.0-beta.2" />
+    <PackageReference Include="MvvmCross.Forms" Version="6.2.0-beta.2" />
+    <PackageReference Include="MvvmCross.Plugin.JsonLocalization" Version="6.2.0-beta.2" />
+    <PackageReference Include="MediatR" Version="5.1.0" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="FormsApp.xaml.cs">
+      <DependentUpon>FormsApp.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="GlobalStyles.xaml.cs">
+      <DependentUpon>GlobalStyles.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Themes\BaseTheme.xaml.cs">
+      <DependentUpon>BaseTheme.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Themes\MainStyles.xaml.cs">
+      <DependentUpon>MainStyles.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\Themes\" />
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Services\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Helpers\AppSettings\" />
+    <Folder Include="Models\" />
+    <Folder Include="Resources\Translations\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Models\Presentables\" />
+    <Folder Include="Helpers\Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Translations\StartViewModel.json" />
+    <None Remove="Resources\Translations\BaseViewModel.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Translations\StartViewModel.json" />
+    <EmbeddedResource Include="Resources\Translations\BaseViewModel.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\AppShop.Application\AppShop.Application.csproj" />
+    <ProjectReference Include="..\..\..\AppShop.Domain\AppShop.Domain.csproj" />
+    <ProjectReference Include="..\..\..\AppShop.Infrastructure\AppShop.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

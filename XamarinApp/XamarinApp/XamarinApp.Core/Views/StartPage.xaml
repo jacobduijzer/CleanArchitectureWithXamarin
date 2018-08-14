@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<views:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                      xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+                      xmlns:viewModels="clr-namespace:XamarinApp.Core.ViewModels;assembly=XamarinApp.Core" 
+                      xmlns:controls="clr-namespace:XamarinApp.Core.Controls;assembly=XamarinApp.Core"
+                      xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms" 
+                      x:Class="XamarinApp.Core.Views.StartPage" 
+                      x:TypeArguments="viewModels:StartViewModel"
+                      mvx:La.ng="Title Title">
+     <ContentPage.ToolbarItems>
+        <controls:ToolbarItemWithBadge x:Name="MenuItem1" 
+                                       Order="Primary" 
+                                       Icon="basket" 
+                                       Text="Item 1" 
+                                       Priority="0"
+                                       BadgeCount="{Binding BadgeCount}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" 
+                 Padding="0" 
+                 Margin="0" 
+                 Spacing="0">
+                
+                <Image Source="main_banner" 
+                       HorizontalOptions="Fill" 
+                       HeightRequest="100"
+                       Aspect="AspectFill" />
+
+                <!-- Filters -->
+                <StackLayout Orientation="Horizontal" 
+                             BackgroundColor="Teal"
+                             HeightRequest="60">
+                    
+                    <StackLayout Orientation="Vertical" 
+                                 BackgroundColor="SeaShell" 
+                                 WidthRequest="120"
+                                 Margin="20, 5, 5, 5" >
+                        <Label Text="Brand" FontSize="Micro" />
+                        <Picker ItemsSource="{Binding Brands}" 
+                                ItemDisplayBinding="{Binding Brand}" 
+                                SelectedItem="{Binding SelectedBrand}"
+                                FontSize="Small"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" 
+                                 BackgroundColor="SeaShell" 
+                                 WidthRequest="120"
+                                 Margin="5">
+                        <Label Text="Type" FontSize="Micro" />
+                        <Picker ItemsSource="{Binding Types}" 
+                                ItemDisplayBinding="{Binding Type}" 
+                                SelectedItem="{Binding SelectedType}" />
+                    </StackLayout>
+
+                    <Button Text="Apply"
+                            Command="{Binding ApplyFiltersCommand}" 
+                            BackgroundColor="SeaShell"
+                            TextColor="Black" />
+                    
+                </StackLayout>
+
+                <!-- CatalogItems List -->
+                <controls:ExtendedFlexLayout ItemsSource="{Binding CatalogItems}" Direction="Row" Wrap="Wrap" JustifyContent="SpaceBetween" >
+                    <controls:ExtendedFlexLayout.ItemTemplate>
+                        <DataTemplate>
+                             <StackLayout Orientation="Vertical"
+                                          HorizontalOptions="Center"
+                                          Margin="10"
+                                          WidthRequest="150">
+                                <Image Source="{Binding CatalogItem.PictureUri}"/>
+                                <Button Text="[ ADD TO BASKET ]" 
+                                        Command="{Binding SelectProductCommand}"
+                                        CommandParameter="{Binding CatalogItem}"/>
+                                <Label Text="{Binding CatalogItem.Description}" 
+                                       HorizontalTextAlignment="Center" />
+                                <Label Text="{Binding CatalogItem.Price}" 
+                                       HorizontalTextAlignment="Center" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </controls:ExtendedFlexLayout.ItemTemplate>
+                </controls:ExtendedFlexLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</views:MvxContentPage>
